@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; display:none; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    :root {
+      /* Primary Colors */
+      --paleBlue: hsl(225, 100%, 94%);
+      --brightBlue: hsl(245, 75%, 52%);
+
+      /* Neutral Colors */
+      --veryPaleBlue: hsl(225, 100%, 98%);
+      --desaturatedBlue: hsl(224, 23%, 55%);
+      --darkBlue: hsl(223, 47%, 23%);
+
+      /* --colorName: Hue, Saturation, Lightness; */
+      /* I haven't idea why is above comment visible in the Code. You can see it in DevTools  */
+    }
+
+
+    /*  Global Styles  */
+
+    a[class] {
+      display: block;
+      font-size: 80%;
+    }
+
+    body {
+      box-sizing: border-box;
+      font-family: 'Red Hat Display', sans-serif;
+      background: var(--paleBlue);
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--desaturatedBlue);
+      text-align: center;
+      margin: 0 1.5em;
+    }
+
+    header {
+      clip: rect(0 0 0 0); 
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap; 
+      width: 1px;
+    }
+
+    h2, h3 {
+      font-weight: 900;
+      color: var(--darkBlue);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin: 0 auto;
+    }
+
+    .order-component {
+      background: url(images/illustration-hero.svg) no-repeat white;
+      width: 450px;
+      height: auto;
+      padding-top: 235px;
+      border-radius: 25px;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .component-content {
+      padding: 2.5em;
+      padding-top: unset;
+    }
+
+    
+    /*  Styles for List of Available Services  */
+
+    .planList {
+      background: var(--veryPaleBlue) url(images/icon-music.svg) no-repeat 20px center;
+      padding: 20px;
+      margin: 20px auto;
+      text-align: right;
+      list-style-type: none;
+      border-radius: 10px;
+    }
+
+    .planList::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .planList div {
+      float: left;
+      width: 50%;
+    }
+
+    .planList p {
+      margin: 0;
+      text-align: right;
+    }
+
+
+    /*  Styles for Links  */
+
+    .changeLink {
+      float: right;
+      width: 50%;
+      color: var(--brightBlue);
+      font-weight: 900;
+      transform: translate(0, 50%);
+    }
+
+    .paymentLink {
+      font-weight: 700;
+      color: white;
+      background-color: var(--brightBlue);
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: hsla(245, 75%, 52%, 0.25) 0 20px 25px -5px;
+    }
+
+    .cancelLink {
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--desaturatedBlue);
+      text-align: center;
+      margin-top: 25px;
+    }
+
+
+    /*  Active States Styles  */
+
+    .changeLink:hover {
+      text-decoration: none;
+      opacity: 0.7;
+    }
+
+    .paymentLink:hover {
+      opacity: 0.7;
+    }
+
+    .cancelLink:hover {
+      color: var(--darkBlue);
+      font-weight: 900;
+    }
+
+
+    /*  Media Queries  */
+
+    @media (width: 375px) {
+      body {
+        background: var(--paleBlue) url(images/pattern-background-mobile.svg) no-repeat center;
+      }
+    }
+
+    @media (width: 1440px) {
+      body {
+        background: var(--paleBlue) url(images/pattern-background-desktop.svg) no-repeat center;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header id="header" class="header">
+    <h1 id="page-title" class="page-title"> <a href="index.html"> Frontend Mentor - Order Summary Challenge by Nitr0Skay </a> </h1>
+  </header>
+
+  <main>
+    <section class="order-component">
+      <div class="component-content">
+        <h2> Order Summary </h2>
+
+        <p>
+          You can now listen to millions of songs, audiobooks, and podcasts on any 
+          device anywhere you like!
+        </p>
+
+        <ul class="planList">
+          <li>
+            <div>
+	      <h3> Annual Plan </h3>
+              <p> $59.99/year </p>
+	    </div>
+
+            <a href="#" class="changeLink"> Change </a>
+          </li>
+        </ul>
+
+        <a href="#" class="paymentLink"> Proceed to Payment </a>
+        <a href="#" class="cancelLink"> Cancel Order </a>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/Nitr0Skay"> Nitr0Skay </a>.
+  </footer>
+
+</body>
+</html>
